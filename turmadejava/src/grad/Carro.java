@@ -10,6 +10,19 @@ public class Carro {
 	private Pessoa proprietario;
 	private boolean ligado = false;
 
+	public Carro() {
+		
+	}
+	
+	public Carro(String marca, String modelo, String cor, int anoModelo, int anoFabricação, Pessoa proprietario) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.cor = cor;
+		this.anoModelo = anoModelo;
+		this.anoFabricação = anoFabricação;
+		this.proprietario = proprietario;
+	}
+
 	public String getMarca() {
 		return this.marca;
 	}	
