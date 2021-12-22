@@ -2,13 +2,26 @@ package tec;
 
 public class Carro {
 
-	private String cor;
+	private String cor = "Branca";
 	private String marca;
 	private String modelo;
 	private int anoFabricação;
 	private int anoModelo;
 	private Pessoa dono;
 	private boolean ligado = false;
+
+	public Carro() {
+
+	}
+
+	public Carro(String cor, String marca, String modelo, int anoFabricação, int anoModelo, Pessoa dono) {
+		this.cor = cor;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.anoFabricação = anoFabricação;
+		this.anoModelo = anoModelo;
+		this.dono = dono;
+	}
 
 	public String getCor() {
 		return this.cor;
@@ -83,9 +96,31 @@ public class Carro {
 	}
 
 	public void salvar() {
-		//CarroDAO carroDao = new CarroDAO();
-		//carroDao.salvar(this);
 		new CarroDAO().salvar(this);
 	}
-	
+
+	// public String salvar() {
+	// return "Carro cadastrado com sucesso!";
+	// }
+
+	public void salvar(Carro carro) {
+		System.out.println("[SOBRECARGA]: " + carro.getModelo());
+	}
+
+	public void salvar(String modelo, int anoModelo) {
+		System.out.println("[SOBRECARGA-MODELO]: " + modelo + " - " + anoModelo);
+	}
+
+	public void buscar(String modelo, int anoModelo) {
+
+	}
+
+	// public void salvar(String marca, int anoFabricação) {
+	// System.out.println("[SOBRECARGA]: " + modelo + " - " + anoModelo);
+	// }
+
+	public void salvar(int anoFabricação, String marca) {
+		System.out.println("[SOBRECARGA-MARCA]: " + marca + " - " + anoFabricação);
+	}
+
 }

@@ -8,6 +8,23 @@ public class Pessoa {
 	private String cnh;
 	private String nascimento;
 
+	public Pessoa() {
+
+	}
+
+	public Pessoa(String nome, String sobrenome) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+	}
+
+	public Pessoa(String nome, String sobrenome, String cpf, String cnh, String nascimento) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.cpf = cpf;	
+		this.cnh = cnh;
+		this.nascimento = nascimento;
+	}
+
 	public String getNome() {
 		return nome;
 	}

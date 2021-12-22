@@ -4,37 +4,22 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		Pessoa pessoaUm = new Pessoa();
-		pessoaUm.setNome("Kate");
-		pessoaUm.setSobrenome("Silva");
-		pessoaUm.setCpf("111.111.111-11");
-		pessoaUm.setCnh("111111");
-		pessoaUm.setNascimento("2000-01-01");
-
-		Carro carro = new Carro();
-
-		carro.setCor("Azul");
-		carro.setMarca("Fiat");
-		carro.setModelo("Uno");
-		carro.setAnoFabricação(2005);
-		carro.setAnoModelo(2006);
-		carro.ligar();
+		Pessoa pessoaUm = new Pessoa("Kate","Silva","111.111.111-11","111111","2000-01-01");
+		//Carro carroQualquer;
+		//Carro carroQualquer2 = null;
+		
+		Carro carro = new Carro("Azul","Fiat","Uno",2005,2006, pessoaUm);
 		carro.ligar();
 
-		Carro outroCarro = new Carro();
-
-		outroCarro.setCor("Vermelha");
-		outroCarro.setMarca("Ferrari");
-		outroCarro.setModelo("Spider");
-		outroCarro.setAnoFabricação(2020);
-		outroCarro.setAnoModelo(2021);
+		Carro outroCarro = new Carro("Vermelha","Ferrari","Spider",2020,2021, pessoaUm);
 		outroCarro.desligar();
-
-		outroCarro.setDono(pessoaUm);
 		System.out.println(outroCarro.getDono().getNome());
 
-		outroCarro.salvar();
+		//outroCarro.salvar();
 		carro.salvar();
+		carro.salvar(outroCarro);
+		carro.salvar("Celta", 2008);
+		carro.salvar(2010, "Fiat");
 	}
 
 }
