@@ -1,10 +1,13 @@
 package grad;
 
+import java.util.ArrayList;
+
 public class Pessoa {
 
 	private String nome;
 	private String sobrenome;
 	private double altura;
+	private ArrayList<Carro> carros = new ArrayList<Carro>();
 	
 	public Pessoa() {
 		
