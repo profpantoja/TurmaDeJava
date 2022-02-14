@@ -1,6 +1,6 @@
 package grad;
 
-public class Carro extends Veiculo {
+public class Carro extends Veiculo implements Voar, Turbo {
 
 	private int crlv;
 
@@ -29,5 +29,49 @@ public class Carro extends Veiculo {
 	public void salvar() {
 		new CarroDAO().salvar(this);
 	}
+	
+	public void ligar() {
+		if (!this.isLigado()) {
+			System.out.println("[" + this.getModelo() + "]:  Let's Roll!");
+			this.setLigado(true);
+		} else
+			System.out.println("[" + this.getModelo() + "]:  Tô ligado, Bizonho!");
+	}
 
+	@Override
+	public void decolar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pousar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void arremeter() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isTurboOn() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void ligarTurbo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void desligarTurbo() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

@@ -2,10 +2,10 @@ package grad;
 
 import java.util.ArrayList;
 
-public class Veiculo {
+abstract class Veiculo {
 
-	private String marca = "Fiat";
-	private String modelo = "Uno";
+	private String marca = "Sem Descrição";
+	private String modelo = "Sem Descrição";
 	private String cor = "Branca";
 	private int anoModelo = 2020;
 	private int anoFabricação = 2019;
@@ -73,10 +73,18 @@ public class Veiculo {
 		else
 			return "Sem dono";
 	}
-
+	
 	// public Pessoa getProprietario() {
 	// return proprietario;
 	// }
+
+	public boolean isLigado() {
+		return ligado;
+	}
+
+	public void setLigado(boolean ligado) {
+		this.ligado = ligado;
+	}
 
 	public void setProprietario(Pessoa proprietario) {
 		this.proprietario = proprietario;
@@ -98,13 +106,7 @@ public class Veiculo {
 	// this.passageiros = passageiros;
 	// }
 
-	public void ligar() {
-		if (!this.ligado) {
-			System.out.println("[" + this.modelo + "]:  Let's Roll!");
-			this.ligado = true;
-		} else
-			System.out.println("[" + this.modelo + "]:  Tô ligado, Bizonho!");
-	}
+	public abstract void ligar();
 
 	public void desligar() {
 		if (this.ligado) {

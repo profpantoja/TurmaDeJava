@@ -14,6 +14,7 @@ public class Principal {
 		myFerrari.salvar();
 
 		Barco yatch = new Barco();
+		yatch.setModelo("BARQUILDO");
 
 		// pessoa.setNome("Alice");
 		// myFerrari.setProprietario(pessoa);
@@ -46,7 +47,8 @@ public class Principal {
 		myFerrari.ligar();
 		myFerrari.desligar();
 		myFerrari.desligar();
-
+		yatch.ligar();
+		
 		ArrayList<Pessoa> passageiros = new ArrayList<Pessoa>();
 		passageiros.add(pessoa);
 		passageiros.add(pessoa2);
@@ -78,6 +80,26 @@ public class Principal {
 			System.out.println("[CARRO]: " + c.getModelo() + " - " + c.getAnoModelo() + " - " + c.getProprietario());
 		}
 
+		
+		//Veiculo veiculo = new Veiculo();
+		Barco jangada = new Barco();
+		jangada.ligar();
+		
+		jangada.ligarTurbo();
+		myFerrari.ligarTurbo();
+		myFerrari.decolar();
+		
+		
+		/* Atribuição de objetos.
+		yatch = myFerrari;
+		myFerrari = yatch;
+		
+		veiculo = myFerrari;
+		veiculo.salvar();
+		
+		myFerrari = veiculo;
+		yatch = veiculo;
+		*/
 	}
 
 }
